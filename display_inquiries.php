@@ -1,8 +1,14 @@
 <?php
+session_start();
+if (!isset($_SESSION["userid"])) {
+    header("Location: login.html");
+    exit();
+}
+
 // データベース接続情報
 $servername = "localhost";
 $username = "root";
-$password = ""; // MAMPのMySQL rootユーザーのパスワードが空の場合
+$password = ""; // MAMPのMySQL rootユーザーのパスワード
 $dbname = "contactform";
 
 // データベース接続の作成

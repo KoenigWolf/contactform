@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION["userid"])) {
+    header("Location: login.html");
+    exit();
+}
+
 // データベース接続情報
 $servername = "localhost";
 $username = "root";
